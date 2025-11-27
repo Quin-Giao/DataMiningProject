@@ -1,1 +1,10 @@
-*.txt
+# Java class files
+*.class
+
+# WEKA model files
+*.model
+models/
+
+# IDE config
+*.idea/
+*.vscode/
