@@ -1,9 +1,6 @@
 # Java class files
 *.class
 
-# WEKA model files
-*.model
-
 # IDE config
 *.idea/
 *.vscode/
