@@ -11,7 +11,7 @@ import java.util.Random;
 public class ZeroRClassifier {
     public static void main(String[] args) throws Exception {
         long startTime = System.nanoTime();
-        DataSource source = new DataSource("data\\heart_diseasr_cleaned.arff");
+        DataSource source = new DataSource("data\\heart_disease_cleaned.arff");
         Instances dataset = source.getDataSet();
 
         dataset.setClassIndex(dataset.numAttributes() - 1);
