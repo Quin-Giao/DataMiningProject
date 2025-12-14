@@ -37,7 +37,7 @@ public class ResampleSmoteBalance {
 
         ArffSaver saver = new ArffSaver();
         saver.setInstances(balancedData);
-        saver.setFile(new File("data\\heart_disease_resample_smote.arff"));
+        saver.setFile(new File("data\\heart_disease_balanced.arff"));
         saver.writeBatch();
 
         System.out.println("Original: " + dataset.numInstances());

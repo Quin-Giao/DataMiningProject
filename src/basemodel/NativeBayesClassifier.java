@@ -12,7 +12,7 @@ public class NativeBayesClassifier {
    public static void main(String[] args) throws Exception {
         long startTime = System.nanoTime();
 
-        DataSource source = new DataSource("data\\heart_disease_cleaned.arff");
+        DataSource source = new DataSource("data\\heart_disease_balanced.arff");
         Instances dataset = source.getDataSet();
 
         dataset.setClassIndex(dataset.numAttributes() - 1);

@@ -5,6 +5,8 @@ import weka.classifiers.lazy.IBk;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.filters.Filter;
+import weka.filters.unsupervised.attribute.NominalToBinary;
 import java.util.Random;
 import weka.core.SerializationHelper;
 
@@ -13,10 +15,14 @@ public class IBkTunningReliefF {
         long startTime = System.nanoTime();
 
         DataSource source = new DataSource("data\\ReliefF_data.arff");
-        Instances dataset = source.getDataSet();
+        Instances data = source.getDataSet();
 
-        dataset.setClassIndex(dataset.numAttributes() - 1);
+        data.setClassIndex(data.numAttributes() - 1);
 
+        NominalToBinary nominalFilter = new NominalToBinary();
+        nominalFilter.setInputFormat(data);
+        Instances dataset = Filter.useFilter(data, nominalFilter);
+        
         String[] options = new String[6];
         options[0] = "-K"; options[1] = "3";
         options[2] = "-W"; options[3] = "0";

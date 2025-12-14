@@ -37,7 +37,7 @@ public class OneRTuningInfoGain {
         System.out.println("Error Rate = " + eval.errorRate());
         System.out.println(eval.toClassDetailsString());
 
-        SerializationHelper.write("models\\OneRInfoGain.model", oner);
+        SerializationHelper.write("models\\OneRTuningInfoGain.model", oner);
 
         long endTime = System.nanoTime();
 

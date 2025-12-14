@@ -13,7 +13,7 @@ import java.io.File;
 public class InfoGainSelection {
     public static void main(String[] args) throws Exception {
         // Load dataset
-        DataSource source = new DataSource("data\\heart_disease_cleaned.arff");
+        DataSource source = new DataSource("data\\heart_disease_balanced.arff");
         Instances dataset = source.getDataSet();
         dataset.setClassIndex(dataset.numAttributes() - 1);
 
@@ -21,7 +21,7 @@ public class InfoGainSelection {
         AttributeSelection attrSelection = new AttributeSelection();
         InfoGainAttributeEval eval = new InfoGainAttributeEval();
         Ranker ranker = new Ranker();
-        ranker.setNumToSelect(10);
+        ranker.setNumToSelect(13);
         attrSelection.setEvaluator(eval);
         attrSelection.setSearch(ranker);
         attrSelection.SelectAttributes(dataset);
@@ -44,10 +44,19 @@ public class InfoGainSelection {
         saver.setFile(new File("data\\InfoGain_data.arff"));
         saver.writeBatch();
 
-        // Print results
-        System.out.println("Selected Attributes:");
-        for (int attr : selectedAttributes) {
-            System.out.println(dataset.attribute(attr).name());
+        // Print results with InfoGain values
+        System.out.println("\n=== InfoGain Attribute Ranking ===\n");
+        System.out.println("Rank\tInfoGain\tAttribute");
+        System.out.println("----\t--------\t---------");
+        
+        double[][] rankedAttributes = attrSelection.rankedAttributes();
+        for (int i = 0; i < rankedAttributes.length; i++) {
+            int attrIndex = (int) rankedAttributes[i][0];
+            double infoGainValue = rankedAttributes[i][1];
+            String attrName = dataset.attribute(attrIndex).name();
+            System.out.printf("%d\t%.6f\t%s\n", (i + 1), infoGainValue, attrName);
         }
+        
+        System.out.println("\n=== Top 13 Selected Attributes Saved to InfoGain_data.arff ===");
     }
 }
