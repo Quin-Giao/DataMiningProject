@@ -4,7 +4,6 @@ import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.classifiers.rules.OneR;
-import java.io.File;
 import weka.core.SerializationHelper;
 import java.util.Random;
 

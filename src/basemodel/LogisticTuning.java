@@ -8,7 +8,6 @@ import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.NominalToBinary;
 import weka.classifiers.functions.Logistic;
 import java.util.Random;
-import weka.core.SerializationHelper;
 
 public class LogisticTuning {
     public static void main(String[] args) throws Exception {

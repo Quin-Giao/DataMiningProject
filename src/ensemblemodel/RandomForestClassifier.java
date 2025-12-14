@@ -6,7 +6,6 @@ import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 import java.util.Random;
-import weka.core.SerializationHelper;
 
 public class RandomForestClassifier {
     public static void main(String[] args) throws Exception {

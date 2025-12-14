@@ -6,7 +6,6 @@ import weka.core.Instances;
 import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils;
 import java.util.Random;
-import weka.core.SerializationHelper;
 
 public class RandomForestTuningInfoGain {
     public static void main(String[] args) throws Exception {

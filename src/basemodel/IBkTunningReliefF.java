@@ -8,7 +8,6 @@ import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.unsupervised.attribute.NominalToBinary;
 import java.util.Random;
-import weka.core.SerializationHelper;
 
 public class IBkTunningReliefF {
     public static void main(String[] args) throws Exception {
