@@ -6,6 +6,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 import weka.filters.Filter;
 import weka.filters.supervised.instance.Resample;
 import weka.filters.supervised.instance.SMOTE;
+import weka.filters.unsupervised.attribute.NumericToNominal;
 
 import java.io.File;
 
@@ -13,9 +14,19 @@ public class ResampleSmoteBalance {
 
     public static void main(String[] args) throws Exception {
 
-        DataSource source = new DataSource("data\\heart_disease_cleaned.arff");
+        DataSource source = new DataSource("data\\heart_disease_feature_engineered.arff");
         Instances dataset = source.getDataSet();
         dataset.setClassIndex(dataset.numAttributes() - 1);
+
+        // Convert class attribute to nominal if it's numeric
+        if (dataset.classAttribute().isNumeric()) {
+            NumericToNominal convert = new NumericToNominal();
+            String indices = String.valueOf(dataset.classIndex() + 1);
+            convert.setAttributeIndices(indices);
+            convert.setInputFormat(dataset);
+            dataset = Filter.useFilter(dataset, convert);
+            System.out.println("✓ Converted class attribute to nominal");
+        }
 
         Resample resample = new Resample();
         resample.setBiasToUniformClass(1.0);

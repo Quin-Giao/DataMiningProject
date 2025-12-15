@@ -21,7 +21,7 @@ public class InfoGainSelection {
         AttributeSelection attrSelection = new AttributeSelection();
         InfoGainAttributeEval eval = new InfoGainAttributeEval();
         Ranker ranker = new Ranker();
-        ranker.setNumToSelect(13);
+        ranker.setNumToSelect(15);
         attrSelection.setEvaluator(eval);
         attrSelection.setSearch(ranker);
         attrSelection.SelectAttributes(dataset);
@@ -57,6 +57,6 @@ public class InfoGainSelection {
             System.out.printf("%d\t%.6f\t%s\n", (i + 1), infoGainValue, attrName);
         }
         
-        System.out.println("\n=== Top 13 Selected Attributes Saved to InfoGain_data.arff ===");
+        System.out.println("\n=== Top 15 Selected Attributes Saved to InfoGain_data.arff ===");
     }
 }

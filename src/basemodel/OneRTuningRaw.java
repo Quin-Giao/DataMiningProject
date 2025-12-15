@@ -6,8 +6,6 @@ import weka.core.SerializationHelper;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.classifiers.rules.OneR;
 import java.util.Random;
-import java.io.File;
-import weka.core.SerializationHelper;
 
 public class OneRTuningRaw {
     public static void main(String[] args) throws Exception {

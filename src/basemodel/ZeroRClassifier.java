@@ -3,7 +3,6 @@ package basemodel;
 import weka.classifiers.evaluation.Evaluation;
 import weka.core.Instances;
 import weka.core.SerializationHelper;
-import java.io.File;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.classifiers.rules.ZeroR;
 import java.util.Random;
