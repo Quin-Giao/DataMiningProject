@@ -7,7 +7,7 @@ import weka.core.converters.ConverterUtils.DataSource;
 import weka.classifiers.rules.OneR;
 import java.util.Random;
 
-public class OneRTuningInfoGain {
+public class OneRTuning {
     public static void main(String[] args) throws Exception {
         long startTime = System.nanoTime();
         DataSource source = new DataSource("data\\InfoGain_data.arff");

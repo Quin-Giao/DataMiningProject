@@ -37,7 +37,7 @@ public class J48TuningInfoGain {
         System.out.println("Error Rate = " + eval.errorRate());
         System.out.println("\n" + eval.toClassDetailsString());
 
-        SerializationHelper.write("models\\J48TuningInfoGain.model", j48);
+        SerializationHelper.write("models\\J48Tuning.model", j48);
 
         long endTime = System.nanoTime();
 

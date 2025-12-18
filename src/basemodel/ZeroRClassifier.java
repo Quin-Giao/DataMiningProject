@@ -28,9 +28,15 @@ public class ZeroRClassifier {
 
         // Print additional evaluation metrics
         System.out.println(eval.toSummaryString("\nResults\n======\n", false));
-        System.out.println("Precision = " + eval.precision(1));
-        System.out.println("Recall = " + eval.recall(1));
-        System.out.println("F-Measure = " + eval.fMeasure(1));
+        
+        // Handle NaN values for minority class metrics
+        double precision = eval.precision(1);
+        double recall = eval.recall(1);
+        double fMeasure = eval.fMeasure(1);
+        
+        System.out.println("Precision = " + (Double.isNaN(precision) ? "N/A (class never predicted)" : precision));
+        System.out.println("Recall = " + recall);
+        System.out.println("F-Measure = " + (Double.isNaN(fMeasure) ? "N/A (class never predicted)" : fMeasure));
         System.out.println("Error Rate = " + eval.errorRate());
         System.out.println(eval.toClassDetailsString());
 

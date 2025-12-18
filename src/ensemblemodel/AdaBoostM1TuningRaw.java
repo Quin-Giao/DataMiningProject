@@ -16,8 +16,11 @@ public class AdaBoostM1TuningRaw {
 
         dataset.setClassIndex(dataset.numAttributes() - 1);
 
-        String[] options = new String[2];
-        options[0] = "-W"; options[1] = "weka.classifiers.bayes.NaiveBayes";
+        String[] options = new String[9];
+        options[0] = "-I"; options[1] = "100";
+        options[2] = "-W"; options[3] = "weka.classifiers.trees.J48";
+        options[4] = "--"; options[5] = "-C"; options[6] = "0.25";
+        options[7] = "-M"; options[8] = "2";
 
         AdaBoostM1 adaBoostM1 = new AdaBoostM1();
         adaBoostM1.setOptions(options);

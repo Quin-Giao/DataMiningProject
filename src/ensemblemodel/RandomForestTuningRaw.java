@@ -17,8 +17,8 @@ public class RandomForestTuningRaw {
         dataset.setClassIndex(dataset.numAttributes() - 1);
 
         String[] options = new String[4];
-        options[0] = "-P"; options[1] = "50";
-        options[2] = "-I"; options[3] = "50";
+        options[0] = "-P"; options[1] = "100";
+        options[2] = "-I"; options[3] = "200";
 
         // Create and train the RandomForest classifier
         RandomForest randomForest = new RandomForest();
