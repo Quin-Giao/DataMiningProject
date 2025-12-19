@@ -96,11 +96,6 @@ All models are evaluated using **10-fold cross-validation**.
 
 ## Key Findings
 
-* **Random Forest (tuned on balanced raw data)** achieved the best overall performance.
-* **IBk** showed the highest recall for the minority class.
-* Baseline models mainly serve as performance references.
-* Feature engineering and hyperparameter tuning significantly improved results.
-
 Detailed analysis is presented in `GroupS_DataMining_Project.pdf`.
 
 ---
