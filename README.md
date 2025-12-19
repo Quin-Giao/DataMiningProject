@@ -71,13 +71,13 @@ The output is a balanced and feature-optimized dataset used for all classificati
 * OneR
 * Naive Bayes
 * J48 (Decision Tree)
+* Logistic Regression
 
 ### Advanced & Improved Models
 
 * IBk (K-Nearest Neighbors)
 * Random Forest
 * Support Vector Machine (SVM)
-* Logistic Regression
 * AdaBoostM1
 
 All models are evaluated using **10-fold cross-validation**.
