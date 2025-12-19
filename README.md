@@ -48,49 +48,6 @@ All processed datasets are stored in the `data/` folder.
 
 ---
 
-## Project Structure
-
-```
-DATAMININGPROJECT/
-│
-├── data/
-│   ├── heart_disease.csv
-│   ├── heart_disease_cleaned.arff
-│   ├── heart_disease_balanced.arff
-│   ├── InfoGain_data.arff
-│   └── ReliefF_data.arff
-│
-├── lib/
-│   ├── weka.jar
-│   └── SMOTE.jar
-│
-├── src/
-│   ├── preprocessing/
-│   │   ├── Csv2Arff.java
-│   │   ├── LoadData.java
-│   │   ├── ResampleSmoteBalance.java
-│   │   ├── InfoGainSelection.java
-│   │   └── ReliefFSelection.java
-│   │
-│   ├── basemodel/
-│   │   ├── ZeroRClassifier.java
-│   │   ├── OneRClassifier.java
-│   │   ├── NaiveBayesClassifier.java
-│   │   ├── J48Classifier.java
-│   │   └── IBkClassifier.java
-│   │
-│   └── ensemblemodel/
-│       ├── RandomForestClassifier.java
-│       ├── SVMClassifier.java
-│       ├── LogisticClassifier.java
-│       └── AdaBoostM1Classifier.java
-│
-├── README.md
-└── report.pdf
-```
-
----
-
 ## Preprocessing Summary
 
 Data preprocessing is implemented using Java and the WEKA API.
@@ -99,7 +56,7 @@ Main steps:
 
 * Convert CSV to ARFF format
 * Clean and validate dataset
-* Handle class imbalance using supervised resampling (SMOTE-style)
+* Handle class imbalance using supervised resampling
 * Perform feature selection using InfoGain and ReliefF
 
 The output is a balanced and feature-optimized dataset used for all classification models.
